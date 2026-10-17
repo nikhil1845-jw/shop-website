@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f0f14">
+  <meta name="description" content="View product details at Rangoli Pujan Bhandar.">
+  <title>Product | Rangoli Pujan Bhandar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- This sticky header provides the same navigation on every page. -->
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Rangoli Pujan Bhandar home"><span class="brand-mark" aria-hidden="true">ॐ</span><span>Rangoli <span class="brand-light">Pujan Bhandar</span></span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="ratan.html">Ratan</a><a href="rudraksh.html">Rudraksh</a><a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+  <main class="page-shell product-page" data-product-detail>
+    <!-- JavaScript fills this product area using the id in the page URL. -->
+    <a class="back-link" href="index.html">← Back to collections</a>
+    <div class="product-detail-layout" data-product-content>
+      <section class="spin-panel" aria-label="Product 360 degree viewer">
+        <div class="spin-viewer" data-spin-viewer>
+          <div class="spin-placeholder" data-spin-placeholder aria-hidden="true"><span>ॐ</span><small>Product photos coming soon</small></div>
+          <img class="spin-image" data-spin-image alt="" draggable="false" hidden>
+          <p class="spin-loading" data-spin-loading role="status">Loading product views…</p>
+          <span class="spin-hint">Drag to rotate</span>
+        </div>
+        <div class="spin-controls" aria-label="Spin viewer controls">
+          <button class="icon-button" type="button" data-spin-prev aria-label="Show previous view">←</button>
+          <button class="button button-outline auto-rotate-button" type="button" data-spin-auto aria-pressed="false">Start auto-rotate</button>
+          <button class="icon-button" type="button" data-spin-next aria-label="Show next view">→</button>
+        </div>
+      </section>
+      <section class="product-information">
+        <p class="eyebrow" data-product-category></p>
+        <h1 data-product-name>Loading product…</h1>
+        <p class="product-price" data-product-price></p>
+        <p class="product-description" data-product-description></p>
+        <a class="button button-gold whatsapp-button" data-product-whatsapp href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">Ask about this on WhatsApp <span aria-hidden="true">↗</span></a>
+        <p class="detail-note">Want to know more? Send us a message and we’ll be happy to help.</p>
+      </section>
+    </div>
+  </main>
+  <!-- This footer links back to the shop's contact details. -->
+  <footer class="site-footer"><div class="page-shell footer-inner"><div><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">ॐ</span><span>Rangoli <span class="brand-light">Pujan Bhandar</span></span></a></div><div class="footer-contact"><p><span>Visit</span> Your shop address, City</p><p><span>Call</span> +91 XXXXX XXXXX</p></div><p class="copyright">© <span data-year></span> Rangoli Pujan Bhandar</p></div></footer>
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

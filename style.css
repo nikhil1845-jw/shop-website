@@ -1,0 +1,227 @@
+/* These are the shared colors and spacing used throughout the shop website. */
+:root {
+  color-scheme: dark;
+  --background: #0f0f14;
+  --card: #1c1c25;
+  --card-light: #22222d;
+  --text: #e8e8ee;
+  --muted: #a5a5b2;
+  --gold: #e0b254;
+  --gold-light: #f1cf81;
+  --border: rgba(232, 232, 238, 0.1);
+  --page-width: 1120px;
+}
+
+/* This section sets the page-wide typography and default colors. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+img { display: block; max-width: 100%; }
+.page-shell { width: min(var(--page-width), calc(100% - 40px)); margin-inline: auto; }
+.gold { color: var(--gold); }
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.19em;
+}
+
+/* This sticky bar holds the shop name and main navigation links. */
+.site-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 max(20px, calc((100vw - var(--page-width)) / 2));
+  border-bottom: 1px solid var(--border);
+  background: rgba(15, 15, 20, 0.94);
+  backdrop-filter: blur(16px);
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 720; white-space: nowrap; }
+.brand-mark { color: var(--gold); font-size: 1.35rem; }
+.brand-light { color: #c6c6d0; font-weight: 450; }
+.site-nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 34px); }
+.site-nav a { padding: 25px 0 23px; color: #b9b9c4; font-size: 0.83rem; transition: color 160ms ease; }
+.site-nav a:hover, .site-nav a.active { color: var(--gold-light); }
+.site-nav a.active { box-shadow: inset 0 -2px var(--gold); }
+
+/* These styles make the main buttons easy to see and tap. */
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  cursor: pointer;
+}
+.button:hover { transform: translateY(-2px); }
+.button-gold { background: var(--gold); color: #17140e; }
+.button-gold:hover { background: var(--gold-light); }
+.button-outline { border-color: rgba(224, 178, 84, 0.4); background: transparent; color: var(--gold-light); }
+.button-outline:hover { border-color: var(--gold); background: rgba(224, 178, 84, 0.08); }
+
+/* This hero gives the home page a warm introduction without needing external images. */
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 420px;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-block: 72px;
+}
+.hero-copy { position: relative; z-index: 1; max-width: 600px; }
+.hero h1 { max-width: 600px; margin: 0; font-size: clamp(2.6rem, 6vw, 4.8rem); letter-spacing: -0.055em; line-height: 1.08; }
+.hero-subtitle { margin: 21px 0 25px; color: #c1c1cc; font-size: clamp(1rem, 2vw, 1.2rem); }
+.hero-note { margin: 14px 0 0; color: var(--muted); font-size: 0.78rem; }
+.hero-art { position: absolute; top: 50%; right: 2%; width: 330px; aspect-ratio: 1; transform: translateY(-50%); }
+.hero-orbit { position: absolute; inset: 8%; border: 1px solid rgba(224, 178, 84, 0.16); border-radius: 50%; }
+.orbit-two { inset: 19%; border-color: rgba(224, 178, 84, 0.24); }
+.hero-symbol { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(224, 178, 84, 0.72); font-size: 8rem; text-shadow: 0 0 70px rgba(224, 178, 84, 0.18); }
+.hero-spark { position: absolute; color: var(--gold-light); }
+.spark-one { top: 14%; right: 18%; font-size: 2rem; }
+.spark-two { bottom: 21%; left: 12%; font-size: 1.5rem; }
+
+/* This section styles the homepage categories and shared section headings. */
+.section-block { padding-block: 54px 76px; }
+.section-heading { margin-bottom: 25px; }
+.section-heading h2, .listing-intro h1 { margin: 0; font-size: clamp(1.9rem, 4vw, 2.5rem); letter-spacing: -0.04em; }
+.category-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.category-card {
+  position: relative;
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 27px;
+  background: linear-gradient(135deg, var(--card), #181820);
+  transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+}
+.category-card::after { position: absolute; right: -35px; bottom: -115px; width: 230px; height: 230px; border: 1px solid rgba(224, 178, 84, 0.13); border-radius: 50%; content: ""; }
+.category-card:hover { transform: translateY(-4px); border-color: rgba(224, 178, 84, 0.46); background: linear-gradient(135deg, #24232a, #1a1a22); }
+.category-count, .product-card-category { color: var(--gold); font-size: 0.65rem; font-weight: 750; letter-spacing: 0.15em; }
+.category-icon { margin-top: 18px; color: var(--gold); font-size: 1.6rem; }
+.category-title { margin-top: 5px; font-size: 1.7rem; font-weight: 700; }
+.category-desc { margin-top: 2px; color: var(--muted); font-size: 0.88rem; }
+.category-link, .product-card-link { margin-top: 18px; color: var(--gold-light); font-size: 0.82rem; font-weight: 650; }
+
+/* This section highlights the shop's promises in three compact cards. */
+.promise-section { border-block: 1px solid rgba(232, 232, 238, 0.06); background: #121218; }
+.promise-section .section-block { padding-block: 63px 72px; }
+.promise-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+.promise-card { border: 1px solid var(--border); border-radius: 12px; padding: 23px; background: rgba(28, 28, 37, 0.7); }
+.promise-icon { color: var(--gold); font-size: 1.35rem; }
+.promise-card h3 { margin: 9px 0 5px; font-size: 1rem; }
+.promise-card p { margin: 0; color: var(--muted); font-size: 0.84rem; }
+
+/* These styles keep contact details and shop information organized in the footer. */
+.site-footer { border-top: 1px solid var(--border); background: #0d0d12; }
+.footer-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: center; padding-block: 27px; }
+.footer-brand { font-size: 0.88rem; }
+.footer-note, .copyright { margin: 7px 0 0; color: #777783; font-size: 0.72rem; }
+.footer-contact { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 22px; }
+.footer-contact p { margin: 0; color: #b8b8c3; font-size: 0.74rem; }
+.footer-contact span { display: block; color: var(--gold); font-size: 0.63rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.copyright { grid-column: 1 / -1; border-top: 1px solid var(--border); padding-top: 14px; }
+
+/* These styles introduce the collection pages and their product cards. */
+.listing-page { min-height: calc(100vh - 190px); }
+.listing-intro { max-width: 650px; margin: 15px 0 35px; }
+.listing-intro h1 { color: var(--gold-light); }
+.listing-intro > p:last-child { margin: 12px 0 0; color: var(--muted); }
+.product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.product-card { overflow: hidden; border: 1px solid var(--border); border-radius: 12px; background: var(--card); transition: transform 180ms ease, border-color 180ms ease; }
+.product-card:hover { transform: translateY(-4px); border-color: rgba(224, 178, 84, 0.45); }
+.product-card-photo { display: grid; aspect-ratio: 1.25; place-items: center; overflow: hidden; background: #23232c; }
+.product-card-photo img { width: 100%; height: 100%; object-fit: cover; }
+.product-card-photo.photo-placeholder { background: linear-gradient(145deg, #292932, #202028); color: rgba(224, 178, 84, 0.56); font-size: 3rem; }
+.product-card-details { padding: 17px; }
+.product-card-details h2 { margin: 5px 0 2px; font-size: 1.12rem; }
+.product-card-details p { margin: 0; color: var(--muted); font-size: 0.82rem; }
+.product-card-link { display: block; margin-top: 15px; }
+
+/* These styles lay out product details and the interactive spin viewer. */
+.product-page { min-height: calc(100vh - 190px); padding-block: 30px 70px; }
+.back-link { display: inline-block; margin-bottom: 23px; color: var(--muted); font-size: 0.82rem; }
+.back-link:hover { color: var(--gold-light); }
+.product-detail-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); align-items: center; gap: clamp(28px, 6vw, 70px); }
+.spin-panel { min-width: 0; }
+.spin-viewer { position: relative; display: grid; min-height: 300px; aspect-ratio: 1 / 0.9; place-items: center; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: #1a1a22; touch-action: pan-y; user-select: none; }
+.spin-image { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.spin-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(145deg, #292932, #202028); color: #a6a6b1; }
+.spin-placeholder[hidden], .spin-image[hidden], [hidden] { display: none !important; }
+.spin-placeholder span { color: rgba(224, 178, 84, 0.58); font-size: 3.5rem; }
+.spin-placeholder small { font-size: 0.76rem; }
+.spin-loading { position: absolute; top: 10px; left: 12px; margin: 0; color: var(--text); font-size: 0.72rem; }
+.spin-hint { position: absolute; right: 12px; bottom: 10px; border-radius: 20px; padding: 5px 9px; background: rgba(15, 15, 20, 0.78); color: #d0d0d8; font-size: 0.67rem; pointer-events: none; }
+.spin-controls { display: flex; align-items: center; justify-content: center; gap: 12px; padding-top: 14px; }
+.icon-button { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border: 1px solid var(--border); border-radius: 50%; background: var(--card); color: var(--text); font-size: 1.2rem; cursor: pointer; }
+.icon-button:hover { border-color: var(--gold); color: var(--gold); }
+.auto-rotate-button { min-height: 42px; padding-inline: 15px; font-size: 0.78rem; }
+.product-information .eyebrow { margin-bottom: 7px; }
+.product-information h1 { margin: 0; font-size: clamp(2rem, 4vw, 3.15rem); letter-spacing: -0.045em; line-height: 1.15; }
+.product-price { margin: 17px 0 13px; color: var(--gold-light); font-size: 1.1rem; font-weight: 700; }
+.product-description { max-width: 510px; margin: 0 0 24px; color: #b8b8c3; font-size: 0.93rem; }
+.whatsapp-button { text-align: center; }
+.detail-note { margin: 14px 0 0; color: #82828e; font-size: 0.75rem; }
+
+/* These rules rearrange content for smaller phone and tablet screens. */
+@media (max-width: 700px) {
+  .site-header { min-height: 64px; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 18px 0; }
+  .brand { min-height: 38px; font-size: 0.87rem; }
+  .site-nav { justify-content: space-between; gap: 10px; }
+  .site-nav a { padding: 10px 0 12px; font-size: 0.75rem; }
+  .page-shell { width: min(var(--page-width), calc(100% - 34px)); }
+  .hero { min-height: 405px; padding-block: 67px; }
+  .hero-art { top: auto; right: -70px; bottom: -60px; width: 250px; transform: none; opacity: 0.58; }
+  .hero-symbol { font-size: 6rem; }
+  .hero-copy { max-width: 480px; }
+  .category-grid { gap: 12px; }
+  .category-card { min-height: 240px; padding: 19px; }
+  .category-desc { font-size: 0.8rem; }
+  .promise-grid { grid-template-columns: 1fr; gap: 10px; }
+  .promise-card { padding: 17px; }
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .product-card-details { padding: 13px; }
+  .product-detail-layout { grid-template-columns: 1fr; gap: 32px; }
+  .spin-viewer { min-height: 280px; }
+  .product-information { padding-bottom: 10px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 13px; }
+  .footer-contact { justify-content: flex-start; }
+  .copyright { grid-column: auto; }
+}
+
+/* This final small-screen adjustment prevents cards and navigation from feeling cramped. */
+@media (max-width: 390px) {
+  .site-nav { gap: 7px; }
+  .site-nav a { font-size: 0.69rem; }
+  .category-grid { grid-template-columns: 1fr; }
+  .category-card { min-height: 220px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .product-card-photo { aspect-ratio: 1.5; }
+  .spin-controls { gap: 8px; }
+  .auto-rotate-button { padding-inline: 10px; font-size: 0.7rem; }
+}
